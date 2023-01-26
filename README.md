@@ -11,7 +11,8 @@ Para configurar e executar os projetos em sua máquina local, você precisará t
     git clone https://github.com/lucasf5/Rocketseat-NodeJS
 2 - Entre no diretório do projeto desejado:
 
-    ```
+    cd Rocketseat-NodeJS/<nome-do-projeto>
+    
 3 - Instale as dependências necessárias com o seguinte comando:
 
     yarn ou npm install
