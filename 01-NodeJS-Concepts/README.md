@@ -16,22 +16,17 @@ Este projeto é uma aplicação RESTful desenvolvida com Node.js, sem o uso de f
 ## Instalação
 
 1 - Clone o repositório:
-    ```
+    
     git clone https://github.com/lucasf5/Rocketseat-NodeJS
-    ```
 2 - Entre na pasta do projeto: 
-    ```
+    
     cd Rocketseat-NodeJS/01-NodeJS-Concepts
-    ```
-
 3 - Instale as dependências: 
-    ```
+    
     npm install ou yarn install
-    ```
 4 - Inicie o projeto: 
-    ```
+    
     npm start ou yarn start
-    ```
 
 ## Uso
 
