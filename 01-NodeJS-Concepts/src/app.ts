@@ -1,8 +1,8 @@
-import Router from "Routes";
-import express from "express";
+import Router from 'Routes'
+import express from 'express'
 
-const app = express();
+const app = express()
 
-Router(app);
+Router(app)
 
-export default app;
+export default app

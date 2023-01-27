@@ -1,13 +1,13 @@
-import express, { Request, Response } from "express";
-import statusCodes from "statusCodes";
+import express, { type Request, type Response } from 'express'
+import statusCodes from 'statusCodes'
 
-const HomeRouter = express.Router();
+const HomeRouter = express.Router()
 
-HomeRouter.get("/", (_req: Request, res: Response) => {
+HomeRouter.get('/', (_req: Request, res: Response) => {
   res.status(statusCodes.OK).json({
-    message: "Welcome",
-    statusCode: statusCodes.OK,
-  });
-});
+    message: 'Welcome',
+    statusCode: statusCodes.OK
+  })
+})
 
-export default HomeRouter;
+export default HomeRouter

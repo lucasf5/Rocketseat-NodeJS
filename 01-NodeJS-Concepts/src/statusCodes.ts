@@ -5,6 +5,13 @@ const statusCodes = {
   BAD_REQUEST: 400,
   UNAUTHORIZED: 401,
   NO_CONTENT: 204,
-};
+  INTERNAL_SERVER_ERROR: 500,
+  FORBIDDEN: 403,
+  CONFLICT: 409,
+  UNPROCESSABLE_ENTITY: 422,
+  TOO_MANY_REQUESTS: 429,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504
+}
 
-export default statusCodes;
+export default statusCodes

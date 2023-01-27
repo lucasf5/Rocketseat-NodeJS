@@ -1,8 +1,8 @@
-import express from "express";
-import HomeRouter from "./Home";
+import express, { type Application } from 'express'
+import HomeRouter from './Home'
 
-const Router = (app: any) => {
-  app.use(express.json(), HomeRouter);
-};
+const Router = (app: Application): void => {
+  app.use(express.json(), HomeRouter)
+}
 
-export default Router;
+export default Router
