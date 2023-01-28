@@ -32,6 +32,20 @@ class BookController {
       next(err)
     }
   }
+
+  public async getBookByTitle (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<any> {
+    const { title } = req.params
+    try {
+      const result = await Book.getBookByTitle(title)
+      res.status(statusCodes.OK).json(result)
+    } catch (err) {
+      next(err)
+    }
+  }
 }
 
 export default new BookController()

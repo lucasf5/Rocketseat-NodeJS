@@ -34,6 +34,20 @@ class BookModel {
       return err
     }
   }
+
+  public async findByTitle (title: string): Promise<Book[] | Error> {
+    try {
+      const result = await client.query(
+        `SELECT * FROM books WHERE title LIKE '%${title}%'`
+      )
+      if (result.rowCount === 0) {
+        return new CustomError('No books found', 400)
+      }
+      return result.rows
+    } catch (err: any) {
+      return err
+    }
+  }
 }
 
 export default new BookModel()

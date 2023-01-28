@@ -39,6 +39,16 @@ class BookService {
 
     return book
   }
+
+  public async getBookByTitle (title: string): Promise<Error | Book[]> {
+    const result = await BookModel.findByTitle(title)
+
+    if (result instanceof Error) {
+      throw new CustomError('No books found', statusCodes.BAD_REQUEST)
+    }
+
+    return result
+  }
 }
 
 export default new BookService()

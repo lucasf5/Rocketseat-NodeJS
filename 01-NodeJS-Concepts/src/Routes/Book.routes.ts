@@ -8,5 +8,6 @@ const BookRouter = express.Router()
 BookRouter
   .get('/books', BookController.getBooks)
   .post('/books', BookController.createBook)
+  .get('/books/:title', BookController.getBookByTitle)
 
 export default BookRouter

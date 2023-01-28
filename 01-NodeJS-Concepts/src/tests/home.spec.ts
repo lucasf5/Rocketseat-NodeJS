@@ -9,3 +9,8 @@ test('Rota /', async () => {
   const response = await fetch('http://localhost:3333/')
   expect(response.status).toBe(200)
 })
+
+test('Rota /books', async () => {
+  const response = await fetch('http://localhost:3333/books')
+  expect(response.status).toBe(200)
+})
