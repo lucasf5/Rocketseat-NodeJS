@@ -1,0 +1,39 @@
+{
+  "name": "03",
+  "version": "1.0.0",
+  "description": "Gympass",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/API/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
+  },
+  "prisma": {
+    "schema": "src/Infra/Database/prisma/schema.prisma"
+  },
+  "keywords": [],
+  "author": "lucas ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.2",
+    "@types/node": "^18.15.3",
+    "@vitest/coverage-c8": "0.29.7",
+    "prisma": "4.11.0",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.5",
+    "typescript": "^4.9.5",
+    "vite-tsconfig-paths": "4.0.7",
+    "vitest": "0.29.7"
+  },
+  "dependencies": {
+    "@prisma/client": "4.11.0",
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.0.3",
+    "eslint-config-standard-with-typescript": "34.0.1",
+    "fastify": "^4.14.1",
+    "pg": "8.10.0",
+    "zod": "3.21.4"
+  }
+}
