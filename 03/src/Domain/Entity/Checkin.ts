@@ -1,25 +1,25 @@
 export class Checkin {
-  private readonly _id: number
+  private readonly _id: string
   private readonly _created_at: Date
-  private readonly _updated_at: Date
-  private readonly _user_id: number
-  private readonly _gyn_id: number
+  private readonly _validate_at: Date
+  private readonly _user_id: string
+  private readonly _gyn_id: string
 
   constructor (
-    id: number,
+    id: string,
     createdAt: Date,
-    updatedAt: Date,
-    userId: number,
-    gynId: number
+    validateAt: Date,
+    userId: string,
+    gynId: string
   ) {
     this._id = id
     this._created_at = createdAt
-    this._updated_at = updatedAt
+    this._validate_at = validateAt
     this._user_id = userId
     this._gyn_id = gynId
   }
 
-  get id (): number {
+  get id (): string {
     return this._id
   }
 
@@ -27,15 +27,15 @@ export class Checkin {
     return this._created_at
   }
 
-  get updated_at (): Date {
-    return this._updated_at
+  get validate_at (): Date {
+    return this._validate_at
   }
 
-  get user_id (): number {
+  get user_id (): string {
     return this._user_id
   }
 
-  get gyn_id (): number {
+  get gyn_id (): string {
     return this._gyn_id
   }
 }

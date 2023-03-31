@@ -85,4 +85,20 @@ export class UserController {
       void reply.status(customError.statusCode).send(customError.message)
     }
   }
+
+  async authenticate(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    const userRepository = new UserRepository()
+
+    const { email, password } = request.body as { email: string, password: string }
+
+    try {
+      await userRepository.checkPassword(email, password)
+
+      void reply.status(200).send("token")
+    } catch (error) {
+      const customError = error as CustomErrorInterface
+
+      void reply.status(customError.statusCode).send(customError.message)
+    }
+  }
 }

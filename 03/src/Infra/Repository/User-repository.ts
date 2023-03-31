@@ -1,8 +1,13 @@
 import { type UserRepositoryInterface } from '@/Domain/Repository/UserRepository.interface'
 import { connection } from '../Database/Connection'
 import { User } from '@/Domain/Entity/User'
-import { hash } from 'bcryptjs'
+import { compare, hash } from 'bcryptjs'
 import CustomError from '../Errors/CustomErrors'
+
+enum Role {
+  ADMIN = 'admin',
+  USER = 'user'
+}
 
 export class UserRepository implements UserRepositoryInterface {
   async findAll(): Promise<User[]> {
@@ -118,6 +123,16 @@ export class UserRepository implements UserRepositoryInterface {
       return passwordHash
     } catch (error) {
       throw new CustomError('Error to hash password', 500)
+    }
+  }
+
+  async checkPassword(password: string, passwordHash: string): Promise<boolean> {
+    try {
+      const passwordCheck = await compare(password, passwordHash)
+
+      return passwordCheck
+    } catch (error) {
+      throw new CustomError('Error to check password', 500)
     }
   }
 }

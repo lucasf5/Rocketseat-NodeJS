@@ -8,4 +8,5 @@ export const userRouter = async (app: FastifyInstance): Promise<void> => {
   app.get('/:id', userController.findById)
   app.put('/:id', userController.update)
   app.delete('/:id', userController.delete)
+  app.post("/session", userController.authenticate)
 }
